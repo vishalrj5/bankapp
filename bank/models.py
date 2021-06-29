@@ -12,3 +12,10 @@ class My_user(AbstractUser):
     balance = models.FloatField(max_length=100)
 
     phone =models.CharField(max_length=12)
+
+class Transactions(models.Model):
+    from_account_number = models.CharField(max_length=16)
+    to_account_number = models.CharField(max_length=16)
+    amount = models.FloatField()
+    notes = models.CharField(max_length=100)
+    date = models.DateField(auto_now=True)
